@@ -8,7 +8,7 @@ import styled from "styled-components"
 const Main = styled.main`
   height: 100%;
   width: 100%;
-  padding: 1.2rem 10rem;
+  padding: 1rem 10rem;
 `
 
 export default function Home() {

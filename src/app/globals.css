@@ -2,7 +2,9 @@
   --border-radius: 0.4rem;
   --primary-bg: #0f0f0f;
   --secondary-bg: #0c0c0c;
+  --terciary-bg: #21201e;
   --primary-text: #d9d9d9;
+  --secondary-text: #a3a3a3;
   --main-color: #df6000;
 }
 
@@ -10,7 +12,9 @@
   :root {
     --primary-bg: #d9d9d9;
     --secondary-bg: #cacaca;
+    --terciary-bg: #a59b95;
     --primary-text: #0f0f0f;
+    --secondary-text: #272727;
     --main-color: #df3400;
   }
 }

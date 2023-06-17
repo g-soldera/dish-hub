@@ -7,7 +7,7 @@ const FooterContainer = styled.footer`
   justify-content: space-between;
   width: 100vw;
   background-color: var(--secondary-bg);
-  height: 5vh;
+  padding: 2rem 10rem;
 `
 
 interface FooterProps {}
@@ -15,8 +15,9 @@ export function Footer(props: FooterProps) {
   return (
     <>
       <FooterContainer>
-        <div className="right">right</div>
-        <div className="left">left</div>
+        <div className="right">Socials</div>
+        <div className="center">Copyright Info</div>
+        <div className="left">Other Info</div>
       </FooterContainer>
     </>
   )

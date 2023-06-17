@@ -25,9 +25,8 @@ const TagHeader = styled.header`
 `
 
 const Logo = styled.h1`
-  width: 30%;
+  width: 50%;
   display: flex;
-  align-items: center;
   font-size: 1.75rem;
   font-weight: 700;
 
@@ -46,7 +45,7 @@ export function Header(props: HeaderProps) {
       <TagHeader>
         <Logo>
           <a href="/">
-            Dish<span>Hub</span>
+            Dish<span>hub</span>
           </a>
         </Logo>
         <SearchInput placeholder="Search" />
