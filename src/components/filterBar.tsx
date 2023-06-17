@@ -3,6 +3,7 @@
 import styled from "styled-components"
 import { FilterByCategory } from "./filterByCategory"
 import { RefreshIcon } from "./refreshIcon"
+import { FilterList } from "./filterList"
 
 const FilterBarContainer = styled.div`
   width: 100%;
@@ -25,7 +26,6 @@ const RightFilters = styled.div`
 
   svg:hover {
     stroke: var(--main-color);
-    animation: rotate 1s linear infinite;
   }
 
   @keyframes rotate {
@@ -43,9 +43,8 @@ export function FilterBar(props: FilterBarProps) {
   return (
     <FilterBarContainer>
       <FilterByCategory />
-      {/* <FilterByType /> */}
       <RightFilters>
-        <span>Filtrar por </span>
+        <FilterList />
         <RefreshIcon />
       </RightFilters>
     </FilterBarContainer>

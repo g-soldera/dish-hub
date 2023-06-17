@@ -1,5 +1,7 @@
 "use client"
 
+import { useFilter } from "@/hooks/useFilter"
+import { FilterType } from "@/types/filterTypes"
 import styled from "styled-components"
 
 const FilterByCategoryList = styled.ul`
@@ -8,20 +10,23 @@ const FilterByCategoryList = styled.ul`
   gap: 3rem;
   list-style: none;
   margin: 0;
+  margin-bottom: 1rem;
 `
 
-const FilterByCategoryItem = styled.li`
+const FilterByCategoryItem = styled.li<FilterItemProps>`
   position: relative;
+  font-family: inherit;
+  font-weight: ${(props) => (props.selected ? "500" : "300")};
 
   &::before {
     content: "";
     position: absolute;
     background-color: var(--main-color);
-    bottom: -1rem;
+    bottom: -0.6rem;
     left: 0;
     width: 100%;
     height: 0.1rem;
-    visibility: hidden;
+    visibility: ${(props) => (props.selected ? "visible" : "hidden")};
   }
 
   &:hover {
@@ -33,14 +38,52 @@ const FilterByCategoryItem = styled.li`
   }
 `
 
+interface FilterItemProps {
+  selected: boolean
+}
+
 interface FilterByCategoryProps {}
+
 export function FilterByCategory(props: FilterByCategoryProps) {
+  const { type, setType } = useFilter()
+
+  const handleChangeType = (value: FilterType) => {
+    setType(value)
+  }
+
   return (
     <div>
       <FilterByCategoryList>
-        <FilterByCategoryItem>Popular Recipes</FilterByCategoryItem>
-        <FilterByCategoryItem>Vegetarian</FilterByCategoryItem>
-        <FilterByCategoryItem>Desserts</FilterByCategoryItem>
+        <FilterByCategoryItem
+          selected={type === FilterType.ALL}
+          onClick={() => handleChangeType(FilterType.ALL)}
+        >
+          Popular
+        </FilterByCategoryItem>
+        <FilterByCategoryItem
+          selected={type === FilterType.VEGETARIAN}
+          onClick={() => handleChangeType(FilterType.VEGETARIAN)}
+        >
+          Vegetarian
+        </FilterByCategoryItem>
+        <FilterByCategoryItem
+          selected={type === FilterType.VEGAN}
+          onClick={() => handleChangeType(FilterType.VEGAN)}
+        >
+          Vegan
+        </FilterByCategoryItem>
+        <FilterByCategoryItem
+          selected={type === FilterType.DESSERTS}
+          onClick={() => handleChangeType(FilterType.DESSERTS)}
+        >
+          Desserts
+        </FilterByCategoryItem>
+        <FilterByCategoryItem
+          selected={type === FilterType.SIMPLE}
+          onClick={() => handleChangeType(FilterType.SIMPLE)}
+        >
+          Simple
+        </FilterByCategoryItem>
       </FilterByCategoryList>
     </div>
   )
