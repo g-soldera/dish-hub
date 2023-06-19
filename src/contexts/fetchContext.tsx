@@ -1,3 +1,5 @@
+"use strict"
+
 import React, { createContext, useState } from "react"
 import { Recipe } from "@/components/recipesContainer"
 import { FilterType } from "@/types/filterTypes"

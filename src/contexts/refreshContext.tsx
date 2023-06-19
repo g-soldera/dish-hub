@@ -1,3 +1,5 @@
+"use strict"
+
 import { useState, createContext, useContext, ReactNode } from "react"
 
 const ReloadContext = createContext<any>(0)
