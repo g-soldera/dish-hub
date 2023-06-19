@@ -65,7 +65,6 @@ const Card = styled.div`
     width: 7vw;
     height: 7vw;
     border-radius: 50%;
-    aspect-ratio: 1/1;
     object-fit: cover;
     border: 3px solid var(--primary-bg);
 
