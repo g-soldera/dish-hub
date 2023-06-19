@@ -56,7 +56,7 @@ export function SearchInput(props: SearchInputProps) {
           <Search {...props} />
           <SearchIcon />
         </SearchBar>
-        <FavoritesIcon />
+        <FavoritesIcon id="favButton" />
       </SearchArea>
     </>
   )

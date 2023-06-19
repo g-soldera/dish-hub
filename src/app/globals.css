@@ -41,6 +41,11 @@ body {
   justify-content: space-between;
 }
 
+::selection {
+  background-color: var(--main-color);
+  color: var(--secondary-bg);
+}
+
 a {
   color: inherit;
   text-decoration: none;

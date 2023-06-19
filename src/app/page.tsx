@@ -3,6 +3,8 @@
 import { FilterBar } from "@/components/filterBar"
 import { Footer } from "@/components/footer"
 import { RecipesContainer } from "@/components/recipesContainer"
+import { FetchProvider } from "@/contexts/fetchContext"
+import { ReloadProvider } from "@/contexts/refreshContext"
 import styled from "styled-components"
 
 const Main = styled.main`
@@ -15,8 +17,12 @@ export default function Home() {
   return (
     <>
       <Main>
-        <FilterBar />
-        <RecipesContainer />
+        <FetchProvider>
+          <ReloadProvider>
+            <FilterBar />
+            <RecipesContainer />
+          </ReloadProvider>
+        </FetchProvider>
       </Main>
       <Footer />
     </>

@@ -14,6 +14,7 @@ const TagHeader = styled.header`
   width: 100%;
 
   svg {
+    fill: none;
     cursor: pointer;
     width: 1.7rem;
     stroke: var(--primary-text);
