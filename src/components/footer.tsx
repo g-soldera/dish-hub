@@ -16,7 +16,7 @@ export function Footer(props: FooterProps) {
     <>
       <FooterContainer>
         <div className="right">Socials</div>
-        <div className="center">Copyright Info</div>
+        <div className="center">G-SOLDERA</div>
         <div className="left">Other Info</div>
       </FooterContainer>
     </>
