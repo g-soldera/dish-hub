@@ -44,6 +44,7 @@ const FilterListContainer = styled.div`
 `
 
 const FilterListDropdown = styled.ul`
+  z-index: 1;
   width: 100%;
   border-radius: var(--border-radius);
   background-color: var(--terciary-bg);

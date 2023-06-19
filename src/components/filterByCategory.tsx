@@ -1,7 +1,9 @@
 "use client"
 
+import { FetchContext } from "@/contexts/fetchContext"
 import { useFilter } from "@/hooks/useFilter"
 import { FilterType } from "@/types/filterTypes"
+import { useContext, useState } from "react"
 import styled from "styled-components"
 
 const FilterByCategoryList = styled.ul`
@@ -46,10 +48,13 @@ interface FilterByCategoryProps {}
 
 export function FilterByCategory(props: FilterByCategoryProps) {
   const { type, setType } = useFilter()
+  const { fetchRecipes } = useContext(FetchContext)
 
   const handleChangeType = (value: FilterType) => {
     setType(value)
+    fetchRecipes(value)
   }
+
 
   return (
     <div>
