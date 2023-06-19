@@ -3,6 +3,7 @@ import { Header } from "@/components/header"
 import "./globals.css"
 import { Poppins } from "next/font/google"
 import { FilterContextProvider } from "@/contexts/filterContext"
+import StyledComponentsRegistry from "@/lib/registry"
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -22,10 +23,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <FilterContextProvider>
-          <Header />
-          {children}
-        </FilterContextProvider>
+        {" "}
+        <StyledComponentsRegistry>
+          <FilterContextProvider>
+            <Header />
+            {children}
+          </FilterContextProvider>
+        </StyledComponentsRegistry>
       </body>
     </html>
   )
