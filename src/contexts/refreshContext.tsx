@@ -1,8 +1,8 @@
-import { useState, createContext, useContext } from "react"
+import { useState, createContext, useContext, ReactNode } from "react"
 
-const ReloadContext = createContext()
+const ReloadContext = createContext<any>(0)
 
-function ReloadProvider({ children }) {
+function ReloadProvider({ children }: { children: ReactNode }) {
   const [reload, setReload] = useState(false)
 
   const handleReload = () => {
